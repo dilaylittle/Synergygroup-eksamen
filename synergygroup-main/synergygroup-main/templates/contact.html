@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Synergy Group{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="column">
+                <div class="content">
+                    <h1>Contact Us</h1>
+                    <form method="post" action="{{ url_for('contact') }}">
+                        <label for="name">Name:</label><br>
+                        <input type="text" id="name" name="name" required><br>
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email" required><br>
+                        <label for="message">Message:</label><br>
+                        <textarea id="message" name="message" required></textarea><br>
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="column">
+                <div class="content">
+                    <h1>Contact Information</h1>
+                    <p>Email: info@synergygroup.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <p>Address: 123 Marine Blvd, Ocean City, Marine Land</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

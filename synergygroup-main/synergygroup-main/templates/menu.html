@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Menu - Uge {{ week_number }}{% endblock %}
+
+{% block content %}
+<div class="column">
+    <div class="content">
+        <h1>Menu - Uge {{ week_number }}</h1>
+        {% if menus %}
+            {% for hub, days in menus.items() %}
+                <h2>{{ hub }}</h2>
+                {% for day in days %}
+                    <h3>{{ day.day }}</h3>
+                    <ul>
+                        {% for meal in day.meals %}
+                            {% if meal == "Vegetar" %}
+                                <li class="vegetarian-option">{{ meal }}</li>
+                            {% else %}
+                                <li>{{ meal }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            {% endfor %}
+        {% else %}
+            <p>No menu available.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
